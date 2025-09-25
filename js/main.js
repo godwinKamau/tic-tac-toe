@@ -31,16 +31,6 @@ squares.forEach((square, i) => {
     })
 })
 
-rows.forEach((row, i) => {
-    row.addEventListener('click', () => {
-        if ( row.innerHTML === '' ) {
-            turnOrder(row)
-            console.log(i)
-        }
-        
-    })
-})
-
 function turnOrder(square , i){
     if (player === 0) {
         square.innerHTML = 'X'
