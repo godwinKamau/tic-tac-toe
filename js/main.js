@@ -2,7 +2,6 @@
 //class for players objects for wins??
 
 const squares = document.querySelectorAll('.square')
-const rows = document.querySelectorAll('.row')
 
 let player = 0
 let gameOver = false
