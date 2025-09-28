@@ -6,6 +6,7 @@ document.querySelector('button').addEventListener('click', gameReset)
 
 let player = 0
 let gameOver = false
+let turn = 0
 
 const winConditions = [
     [ 0 , 1 , 2 ],
@@ -31,14 +32,19 @@ squares.forEach((square, i) => {
 })
 
 function turnOrder(square , i){
-    if (player === 0) {
-        square.innerHTML = 'X'
-        player += 1
-        updateWin(i,'X')
+    if (turn != 8) {
+        if (player === 0) {
+            square.innerHTML = 'X'
+            player += 1
+            updateWin(i,'X')
+        } else {
+            square.innerHTML = 'O'
+            player -= 1
+            updateWin(i,'O')
+        }
+        turn++
     } else {
-        square.innerHTML = 'O'
-        player -= 1
-        updateWin(i,'O')
+        draw()
     }
 }
 
@@ -67,6 +73,7 @@ function gameReset() {
     squares.forEach(square => {
         square.innerHTML = ''
     })
+    turn = 0
     document.querySelector('h2').innerText = ''
     winConditions.splice(0,winConditions.length,[ 0 , 1 , 2 ],
     [ 3 , 4 , 5 ],
@@ -76,4 +83,11 @@ function gameReset() {
     [ 0 , 3 , 6 ],
     [ 1 , 4 , 7 ],
     [ 2 , 5 , 8 ])
+    document.querySelector('button').style.display = 'none'
+}
+
+function draw() {
+    gameOver = true
+    document.querySelector('h2').innerText = 'It\'s a draw!'
+    document.querySelector('button').style.display = 'block'
 }

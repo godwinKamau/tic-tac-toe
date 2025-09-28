@@ -56,7 +56,8 @@ body {
     align-items:center;
     flex-direction:column;
     justify-content: space-between;
-    border:1px dotted black;
+    background-color: rgb(0, 0, 87);
+    font-family: 'Monoton','Times New Roman', Times, serif;
 }
 
 .container {
@@ -89,6 +90,7 @@ body {
     align-items: center;
     text-align: center;
     font-size: 40px;
+    color:aquamarine;
 }
 
 .square:hover {
@@ -107,4 +109,36 @@ body {
 
 button {
     display:none;
+    background: blue;
+    color:aquamarine;
+    padding:10px;
+    border-radius: 20px;
+}
+
+button:hover {
+    transform: translateY(  2px);
+}
+
+.description {
+    width:600px;
+    height:100px;
+    background: navy;
+    color:rgb(78, 78, 255);
+    display: flex;
+    flex-direction: column;
+    font-family: 'Rubik Burned','Times New Roman', Times, serif;
+    font-size: 30px;
+    align-items: center;
+    justify-content: space-around;  
+}
+
+.title {
+    width:600px;
+    height:50px;
+    background-color: blue;
+    color:navy;
+    display: flex;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
 }
